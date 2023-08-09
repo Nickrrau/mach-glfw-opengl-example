@@ -8,10 +8,8 @@ This is an example for how to use [mach-glfw](https://github.com/hexops/mach-glf
 
 ### Clone the repository
 
-Cloning submodules is required, so use `--recursive`:
-
 ```sh
-git clone --recursive https://github.com/hexops/mach-glfw-opengl-example
+git clone https://github.com/hexops/mach-glfw-opengl-example
 cd mach-glfw-opengl-example/
 ```
 
@@ -29,12 +27,12 @@ This example only clears the screen to a purple color. It doesn't show how to ge
 
 ### Understanding how zig-opengl works
 
-[zig-opengl](https://github.com/MasterQ32/zig-opengl) provides a binding generator which uses `dotnet` to generate pure-Zig OpenGL bindings. We generate and commit them to this repository for simplicity:
+[zig-opengl](https://github.com/MasterQ32/zig-opengl) provides a binding generator which uses `dotnet` to generate pure-Zig OpenGL bindings. We generate and commit them to this repository. The build steps are as follows:
 
 ```sh
-cd libs/zig-opengl/
-mkdir exports/
-dotnet run -- OpenGL-Registry/xml/gl.xml ../gl.zig GL_VERSION_4_1
+git clone https://github.com/MasterQ32/zig-opengl
+cd zig-opengl
+dotnet run OpenGL-Registry/xml/gl.xml gl41.zig GL_VERSION_4_1
 ```
 
 ## Getting help
